@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: sellersidekick
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    plan: free
+    envVars:
+      - key: PAYPAL_CLIENT_ID
+        sync: false
+      - key: PAYPAL_CLIENT_SECRET
+        sync: false
+      - key: CURRENCY
+        value: USD

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SellerSidekick — Turn requests into paid orders</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/"><span class="brand-mark">S</span><span>seller<span class="brand-light">sidekick</span></span></a><span class="sandbox"><i></i> SANDBOX WORKSPACE</span></header>
+  <main class="layout">
+    <section class="intro"><div class="eyebrow">YOUR AI ORDER DESK</div><h1>From “hey, can you…”<br>to <em>order confirmed.</em></h1><p>Turn scattered customer requests into clear, seller-approved quotes and a PayPal checkout in a few clicks.</p><div class="trust-note"><span>✦</span> You stay in control. Review every detail before payment.</div></section>
+    <section class="workspace">
+      <div class="panel request-panel"><div class="panel-head"><div><span class="step">01</span><h2>Customer request</h2></div><span class="live-status"><b></b> READY</span></div>
+        <label for="request">Paste a message from your customer</label><textarea id="request" rows="4" maxlength="2000">I need 24 cupcakes for Saturday, half chocolate and half vanilla, under $48 please.</textarea>
+        <div class="example-row"><span>Try an example</span><button id="exampleBtn" type="button">Custom birthday cake ↗</button></div>
+        <button class="primary" id="extractBtn"><span>✦</span> Turn into an order <span class="arrow">→</span></button>
+        <div id="error" class="error" hidden></div>
+      </div>
+      <div class="panel quote-panel" id="quotePanel"><div class="panel-head"><div><span class="step">02</span><h2>Review your quote</h2></div><span class="ai-tag" id="aiTag">AI DRAFT</span></div>
+        <div class="quote-fields">
+          <div class="field"><label for="item">ORDER</label><input id="item" value="Custom cupcakes" disabled></div>
+          <div class="field two"><div><label for="quantity">QUANTITY</label><input id="quantity" type="number" value="24" min="1"></div><div><label for="date">DATE</label><input id="date" value="Saturday" placeholder="Confirm date"></div></div>
+          <div class="field"><label for="details">DETAILS</label><input id="details" value="chocolate and vanilla"></div>
+          <div class="field two"><div><label for="amount">QUOTE AMOUNT</label><div class="amount-wrap"><span id="currencySymbol">$</span><input id="amount" type="number" min="1" step="0.01" value="48"></div></div><div><label for="budget">CUSTOMER BUDGET</label><input id="budget" value="$48" disabled></div></div>
+        </div>
+        <div class="clarification" id="clarification" hidden></div>
+        <div class="approval-note"><span>✓</span> Review and edit this quote before creating checkout.</div>
+        <button class="paypal-button" id="payBtn" disabled><span class="pay-mark">P</span> Create PayPal checkout <span class="arrow">→</span></button>
+        <div class="secure-note">PayPal sandbox · No real money moves</div>
+      </div>
+      <div class="success-panel" id="successPanel" hidden><div class="success-icon">✓</div><div><strong id="successTitle">Payment complete</strong><p id="successText">Your order is confirmed.</p></div></div>
+    </section>
+    <footer><span>SellerSidekick</span><span>AI drafts. Sellers decide. PayPal moves the money.</span></footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
